@@ -65,6 +65,38 @@ class _MyHomePageState extends State<MyHomePage> {
                 fontWeight: FontWeight.normal,
               ),
             ),
+            TextButton(
+              child: const Text("click me"),
+              onPressed: () {
+                print("hello pranjal");
+              },
+              onLongPress: () => {
+                print("hello pranjal"),
+              },
+            ),
+            const SizedBox(height: 20),
+            Container(
+              height: 10,
+              width: 50,
+              color: Colors.grey,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  print('hi');
+                },
+                child: const Text("elevated button")),
+            const SizedBox(height: 20),
+            OutlinedButton(
+                onPressed: () => {}, child: const Text("outlined button")),
+            const SizedBox(height: 20),
+            Center(
+              child: Container(
+                  height: 100,
+                  width: 200,
+                  color: Colors.lightBlue,
+                  child: Image.asset('assets/images/goat.jpg')),
+            ),
+            Image.asset('assets/images/city.png'),
           ],
         ),
       ),

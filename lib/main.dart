@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Aditya vivek'),
+      home: const MyHomePage(title: 'Pranjal Choudhary'),
     );
   }
 }
@@ -32,36 +32,74 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var arrName = ['pranjal', 'aditya', 'vivek', 'saura'];
-    var collor = [Colors.red, Colors.green, Colors.blue, Colors.yellow];
+    var arrName = [
+      'pranjal',
+      'aditya',
+      'vivek',
+      'saura',
+      'Rohan',
+      'Rahul',
+      'Raj',
+      'Ravi',
+      'Rajesh',
+      'Rajat'
+    ];
+    var collor = [
+      Colors.red,
+      Colors.green,
+      Colors.blue,
+      Colors.yellow,
+      Colors.pink,
+      Colors.purple,
+      Colors.orange,
+      Colors.brown,
+      Colors.grey,
+      Colors.black
+    ];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: ListView.builder(
+      body: ListView.separated(
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.all(8),
-            child: Column(children: [
-              Container(
-                height: 100,
-                color: collor[index],
-                child: Center(
-                  child: Text(
-                    arrName[index],
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.lightBlue,
-                      fontWeight: FontWeight.bold,
+              padding: const EdgeInsets.all(8),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Column(children: [
+                  Row(children: [
+                    Container(
+                      height: 100,
+                      width: 500,
+                      color: collor[index],
+                      child: Center(
+                        child: Text(
+                          arrName[index],
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.lightBlue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              )
-            ]),
-          );
+                    SizedBox(
+                      height: 100,
+                      width: 200,
+                      child: Image.asset('assets/images/logo.jpg'),
+                    ),
+                  ]),
+                ]),
+              ));
         },
         itemCount: arrName.length,
+        separatorBuilder: (BuildContext context, int index) {
+          return const Divider(
+            height: 5,
+            thickness: 4,
+          );
+        },
       ),
 
       //  Padding(

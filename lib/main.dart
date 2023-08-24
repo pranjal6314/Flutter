@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter -pranjal',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Pranjal Choudhary'),
@@ -41,7 +41,6 @@ class _MyHomePageState extends State<MyHomePage> {
       'Rahul',
       'Raj',
       'Ravi',
-      'Rajesh',
       'Rajat'
     ];
     var collor = [
@@ -53,7 +52,6 @@ class _MyHomePageState extends State<MyHomePage> {
       Colors.purple,
       Colors.orange,
       Colors.brown,
-      Colors.grey,
       Colors.black
     ];
     return Scaffold(
@@ -64,11 +62,41 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView.separated(
         itemBuilder: (context, index) {
           return Padding(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(20),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Column(children: [
                   Row(children: [
+                    Container(
+                      height: 110,
+                      child: Center(
+                          child: Text(
+                        index.toString(),
+                        style:
+                            const TextStyle(fontSize: 20, color: Colors.white),
+                      )),
+                      width: 100,
+                      decoration: BoxDecoration(
+                          color: collor[collor.length - 1 - index],
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.elliptical(5, 10),
+                              bottomRight: Radius.circular(10)),
+                          // borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 255, 0, 0),
+                              width: 2),
+                          boxShadow: [
+                            BoxShadow(
+                              color: collor[index],
+                              blurRadius: 11,
+                              spreadRadius: 10,
+                            )
+                          ]),
+                    ),
+                    SizedBox(
+                      height: 100,
+                      width: 20,
+                    ),
                     Container(
                       height: 100,
                       width: 500,
@@ -78,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           arrName[index],
                           style: const TextStyle(
                             fontSize: 20,
-                            color: Colors.lightBlue,
+                            color: Color.fromARGB(255, 244, 3, 212),
                             fontWeight: FontWeight.bold,
                           ),
                         ),

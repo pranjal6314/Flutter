@@ -59,76 +59,181 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: ListView.separated(
-        itemBuilder: (context, index) {
-          return Padding(
-              padding: const EdgeInsets.all(20),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Column(children: [
-                  Row(children: [
-                    Container(
-                      height: 110,
-                      child: Center(
-                          child: Text(
-                        index.toString(),
-                        style:
-                            const TextStyle(fontSize: 20, color: Colors.white),
-                      )),
-                      width: 100,
-                      decoration: BoxDecoration(
-                          color: collor[collor.length - 1 - index],
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.elliptical(5, 10),
-                              bottomRight: Radius.circular(10)),
-                          // borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                              color: const Color.fromARGB(255, 255, 0, 0),
-                              width: 2),
-                          boxShadow: [
-                            BoxShadow(
-                              color: collor[index],
-                              blurRadius: 11,
-                              spreadRadius: 10,
-                            )
-                          ]),
-                    ),
-                    SizedBox(
-                      height: 100,
-                      width: 20,
-                    ),
-                    Container(
-                      height: 100,
-                      width: 500,
-                      color: collor[index],
-                      child: Center(
-                        child: Text(
-                          arrName[index],
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: Color.fromARGB(255, 244, 3, 212),
-                            fontWeight: FontWeight.bold,
+      body: Center(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 10,
+              child: ListView.separated(
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                height: 110,
+                                width: 100,
+                                child: Center(
+                                  child: Text(
+                                    index.toString(),
+                                    style: const TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  color: collor[collor.length - 1 - index],
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.elliptical(5, 10),
+                                    bottomRight: Radius.circular(10),
+                                  ),
+                                  border: Border.all(
+                                    color: const Color.fromARGB(255, 255, 0, 0),
+                                    width: 2,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: collor[index],
+                                      blurRadius: 11,
+                                      spreadRadius: 10,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                height: 100,
+                                width: 20,
+                              ),
+                              Container(
+                                height: 100,
+                                width: 500,
+                                color: collor[index],
+                                child: Center(
+                                  child: Text(
+                                    arrName[index],
+                                    style: const TextStyle(
+                                      fontSize: 20,
+                                      color: Color.fromARGB(255, 244, 3, 212),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 100,
+                                width: 200,
+                                child: Image.asset('assets/images/logo.jpg'),
+                              ),
+                            ],
                           ),
-                        ),
+                        ],
                       ),
                     ),
-                    SizedBox(
-                      height: 100,
-                      width: 200,
-                      child: Image.asset('assets/images/logo.jpg'),
-                    ),
-                  ]),
-                ]),
-              ));
-        },
-        itemCount: arrName.length,
-        separatorBuilder: (BuildContext context, int index) {
-          return const Divider(
-            height: 5,
-            thickness: 4,
-          );
-        },
+                  );
+                },
+                itemCount: arrName.length,
+                separatorBuilder: (BuildContext context, int index) {
+                  return const Divider(
+                    height: 5,
+                    thickness: 4,
+                  );
+                },
+              ),
+            ),
+            SizedBox(
+                height: 20), // Space between the two ListViews and the Text
+            Expanded(
+              child: Text(
+                'Learning Flutter',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            SizedBox(height: 20), // Additional space after the Text
+          ],
+        ),
       ),
+
+      // body:
+      // Center(
+      //   child: ListView.separated(
+      //     itemBuilder: (context, index) {
+      //       return Padding(
+      //           padding: const EdgeInsets.all(20),
+      //           child: SingleChildScrollView(
+      //             scrollDirection: Axis.horizontal,
+      //             child: Column(children: [
+      //               Row(children: [
+      //                 Container(
+      //                   height: 110,
+      //                   child: Center(
+      //                       child: Text(
+      //                     index.toString(),
+      //                     style: const TextStyle(
+      //                         fontSize: 20, color: Colors.white),
+      //                   )),
+      //                   width: 100,
+      //                   decoration: BoxDecoration(
+      //                       color: collor[collor.length - 1 - index],
+      //                       borderRadius: BorderRadius.only(
+      //                           topLeft: Radius.elliptical(5, 10),
+      //                           bottomRight: Radius.circular(10)),
+      //                       // borderRadius: BorderRadius.circular(10),
+      //                       border: Border.all(
+      //                           color: const Color.fromARGB(255, 255, 0, 0),
+      //                           width: 2),
+      //                       boxShadow: [
+      //                         BoxShadow(
+      //                           color: collor[index],
+      //                           blurRadius: 11,
+      //                           spreadRadius: 10,
+      //                         )
+      //                       ]),
+      //                 ),
+      //                 SizedBox(
+      //                   height: 100,
+      //                   width: 20,
+      //                 ),
+      //                 Container(
+      //                   height: 100,
+      //                   width: 500,
+      //                   color: collor[index],
+      //                   child: Center(
+      //                     child: Text(
+      //                       arrName[index],
+      //                       style: const TextStyle(
+      //                         fontSize: 20,
+      //                         color: Color.fromARGB(255, 244, 3, 212),
+      //                         fontWeight: FontWeight.bold,
+      //                       ),
+      //                     ),
+      //                   ),
+      //                 ),
+      //                 SizedBox(
+      //                   height: 100,
+      //                   width: 200,
+      //                   child: Image.asset('assets/images/logo.jpg'),
+      //                 ),
+      //               ]),
+      //             ]),
+      //           ));
+      //     },
+      //     itemCount: arrName.length,
+      //     separatorBuilder: (BuildContext context, int index) {
+      //       return const Divider(
+      //         height: 5,
+      //         thickness: 4,
+      //       );
+      //     },
+      //   ),
+      // ),
 
       //  Padding(
       //     padding: const EdgeInsets.all(8),

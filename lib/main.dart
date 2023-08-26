@@ -173,93 +173,105 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       body: Center(
-        child: ListView.separated(
-          itemBuilder: (context, index) {
-            return ListTile(
-              onTap: () {
-                print("hello");
-              },
-              leading: Text('$index'),
-              title: Text(
-                arrName[index],
-                style: TextStyle(color: collor[index]),
-              ),
-              subtitle: Text(collor[index].toString()),
-              trailing: Icon(Icons.add),
-            );
-
-            // Padding(
-            //     padding: const EdgeInsets.all(20),
-            //     child: SingleChildScrollView(
-            //       scrollDirection: Axis.horizontal,
-            //       child: Column(children: [
-            //         Row(children: [
-            //           Container(
-            //             height: 110,
-            //             child: Center(
-            //                 child: Text(
-            //               index.toString(),
-            //               style: const TextStyle(
-            //                   fontSize: 20, color: Colors.white),
-            //             )),
-            //             width: 100,
-            //             decoration: BoxDecoration(
-            //                 color: collor[collor.length - 1 - index],
-            //                 borderRadius: BorderRadius.only(
-            //                     topLeft: Radius.elliptical(5, 10),
-            //                     bottomRight: Radius.circular(10)),
-            //                 // borderRadius: BorderRadius.circular(10),
-            //                 border: Border.all(
-            //                     color: const Color.fromARGB(255, 255, 0, 0),
-            //                     width: 2),
-            //                 boxShadow: [
-            //                   BoxShadow(
-            //                     color: collor[index],
-            //                     blurRadius: 11,
-            //                     spreadRadius: 10,
-            //                   )
-            //                 ]),
-            //           ),
-            //           SizedBox(
-            //             height: 100,
-            //             width: 20,
-            //           ),
-            //           Container(
-            //             margin: EdgeInsets.all(5),
-            //             height: 100,
-            //             width: 500,
-            //             color: collor[index],
-            //             child: Center(
-            //               child: Padding(
-            //                 padding: EdgeInsets.only(right: 50),
-            //                 child: Text(
-            //                   arrName[index],
-            //                   style: const TextStyle(
-            //                     fontSize: 20,
-            //                     color: Color.fromARGB(255, 244, 3, 212),
-            //                     fontWeight: FontWeight.bold,
-            //                   ),
-            //                 ),
-            //               ),
-            //             ),
-            //           ),
-            //           SizedBox(
-            //             height: 100,
-            //             width: 200,
-            //             child: Image.asset('assets/images/logo.jpg'),
-            //           ),
-            //         ]),
-            //       ]),
-            //     ));
-          },
-          itemCount: arrName.length,
-          separatorBuilder: (BuildContext context, int index) {
-            return const Divider(
-              height: 5,
-              thickness: 4,
-            );
-          },
+        child: CircleAvatar(
+          child: Text(
+            "papu",
+            style: TextStyle(
+                color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+          maxRadius: 60,
+          // backgroundImage: AssetImage('assets/images/logo.jpg'),
+          backgroundColor: Color.fromARGB(255, 179, 201, 67),
         ),
+
+        //  ListView.separated(
+        //   itemBuilder: (context, index) {
+        //     return ListTile(
+        //       onTap: () {
+        //         print("hello");
+        //       },
+
+        //       leading: Text('$index'),
+        //       title: Text(
+        //         arrName[index],
+        //         style: TextStyle(color: collor[index]),
+        //       ),
+        //       subtitle: Text(collor[index].toString()),
+        //       trailing: Icon(Icons.add),
+        //     );
+
+        // Padding(
+        //     padding: const EdgeInsets.all(20),
+        //     child: SingleChildScrollView(
+        //       scrollDirection: Axis.horizontal,
+        //       child: Column(children: [
+        //         Row(children: [
+        //           Container(
+        //             height: 110,
+        //             child: Center(
+        //                 child: Text(
+        //               index.toString(),
+        //               style: const TextStyle(
+        //                   fontSize: 20, color: Colors.white),
+        //             )),
+        //             width: 100,
+        //             decoration: BoxDecoration(
+        //                 color: collor[collor.length - 1 - index],
+        //                 borderRadius: BorderRadius.only(
+        //                     topLeft: Radius.elliptical(5, 10),
+        //                     bottomRight: Radius.circular(10)),
+        //                 // borderRadius: BorderRadius.circular(10),
+        //                 border: Border.all(
+        //                     color: const Color.fromARGB(255, 255, 0, 0),
+        //                     width: 2),
+        //                 boxShadow: [
+        //                   BoxShadow(
+        //                     color: collor[index],
+        //                     blurRadius: 11,
+        //                     spreadRadius: 10,
+        //                   )
+        //                 ]),
+        //           ),
+        //           SizedBox(
+        //             height: 100,
+        //             width: 20,
+        //           ),
+        //           Container(
+        //             margin: EdgeInsets.all(5),
+        //             height: 100,
+        //             width: 500,
+        //             color: collor[index],
+        //             child: Center(
+        //               child: Padding(
+        //                 padding: EdgeInsets.only(right: 50),
+        //                 child: Text(
+        //                   arrName[index],
+        //                   style: const TextStyle(
+        //                     fontSize: 20,
+        //                     color: Color.fromARGB(255, 244, 3, 212),
+        //                     fontWeight: FontWeight.bold,
+        //                   ),
+        //                 ),
+        //               ),
+        //             ),
+        //           ),
+        //           SizedBox(
+        //             height: 100,
+        //             width: 200,
+        //             child: Image.asset('assets/images/logo.jpg'),
+        //           ),
+        //         ]),
+        //       ]),
+        //     ));
+        //   },
+        //   itemCount: arrName.length,
+        //   separatorBuilder: (BuildContext context, int index) {
+        //     return const Divider(
+        //       height: 5,
+        //       thickness: 4,
+        //     );
+        //   },
+        // ),
       ),
 
       //  Padding(

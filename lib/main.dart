@@ -1,3 +1,4 @@
+import 'package:firstapp/card.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,10 +13,18 @@ class MyApp extends StatelessWidget {
       title: 'Flutter -pranjal',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        textTheme: TextTheme(
+            displayLarge: TextStyle(
+                color: Colors.black,
+                backgroundColor: Colors.yellow.shade200,
+                fontSize: 30,
+                fontFamily: 'RobotoMono')),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 34, 196, 255)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Pranjal Choudhary'),
+      // home: const MyHomePage(title: 'Pranjal Choudhary'),
+      home: Center(child: Cardd()),
     );
   }
 }
@@ -176,8 +185,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: CircleAvatar(
           child: Text(
             "papu",
-            style: TextStyle(
-                color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+            style: (Theme.of(context)
+                .textTheme
+                .displayLarge!
+                .copyWith(fontWeight: FontWeight.bold)),
           ),
           maxRadius: 60,
           // backgroundImage: AssetImage('assets/images/logo.jpg'),

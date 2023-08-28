@@ -1,4 +1,5 @@
 import 'package:firstapp/card.dart';
+import 'package:firstapp/input.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: 'Pranjal Choudhary'),
-      home: Center(child: Cardd()),
+      home: InputWidget(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:firstapp/card.dart';
+import 'package:firstapp/date_time.dart';
 import 'package:firstapp/input.dart';
 import 'package:flutter/material.dart';
 
@@ -11,22 +12,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter -pranjal',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        textTheme: TextTheme(
-            displayLarge: TextStyle(
-                color: Colors.black,
-                backgroundColor: Colors.yellow.shade200,
-                fontSize: 30,
-                fontFamily: 'RobotoMono')),
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 34, 196, 255)),
-        useMaterial3: true,
-      ),
-      // home: const MyHomePage(title: 'Pranjal Choudhary'),
-      home: InputWidget(),
-    );
+        title: 'Flutter -pranjal',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          textTheme: TextTheme(
+              displayLarge: TextStyle(
+                  color: Colors.black,
+                  backgroundColor: Colors.yellow.shade200,
+                  fontSize: 30,
+                  fontFamily: 'RobotoMono')),
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: const Color.fromARGB(255, 34, 196, 255)),
+          useMaterial3: true,
+        ),
+        // home: const MyHomePage(title: 'Pranjal Choudhary'),
+        // home: InputWidget(),/
+        home: CurrDateTime());
   }
 }
 
@@ -192,7 +193,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 .copyWith(fontWeight: FontWeight.bold)),
           ),
           maxRadius: 60,
-          // backgroundImage: AssetImage('assets/images/logo.jpg'),
+          // backgroundImage:f AssetImage('assets/images/logo.jpg'),
           backgroundColor: Color.fromARGB(255, 179, 201, 67),
         ),
 

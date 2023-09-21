@@ -21,15 +21,7 @@ class _UsingGridState extends State<UsingGrid> {
       Colors.brown,
       Colors.black
     ];
-    return GridView.builder(
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 100, crossAxisSpacing: 11, mainAxisSpacing: 11),
-        itemBuilder: (context, index) {
-          return Container(
-            color: colorlist[index],
-          );
-        },
-        itemCount: colorlist.length);
+    return _mygrid(colorlist);
     // GridView.count(
     //     crossAxisCount: 3,
     //     crossAxisSpacing: 11,
@@ -120,5 +112,17 @@ class _UsingGridState extends State<UsingGrid> {
     // ),
     // ],
     // );
+  }
+
+  GridView _mygrid(List<Color> colorlist) {
+    return GridView.builder(
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 100, crossAxisSpacing: 11, mainAxisSpacing: 11),
+        itemBuilder: (context, index) {
+          return Container(
+            color: colorlist[index],
+          );
+        },
+        itemCount: colorlist.length);
   }
 }

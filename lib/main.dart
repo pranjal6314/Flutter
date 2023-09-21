@@ -2,6 +2,7 @@ import 'package:firstapp/card.dart';
 import 'package:firstapp/date_time.dart';
 import 'package:firstapp/grid.dart';
 import 'package:firstapp/input.dart';
+import 'package:firstapp/stack.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,7 +30,9 @@ class MyApp extends StatelessWidget {
         ),
         // home: const MyHomePage(title: 'Pranjal Choudhary'),
         // home: InputWidget(),/
-        home: UsingGrid());
+        home: const SizedBox(height: 400, width: 400, child: StackWidget())
+        // home: UsingGrid()
+        );
     // home: CurrDateTime());
   }
 }
